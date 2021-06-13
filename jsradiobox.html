@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>radio button</title>
+</head>
+<body>
+	<div id = "status"></div>
+	<script type="text/javascript">
+		var martial = document.getElementById('status');
+		var ol = document.createElement('ol');
+		ol.setAttribute('id','martial-status');
+		martial.appendChild(ol);
+
+		var head = document.createElement('h1');
+		head.innerText = "Choose your martial status";
+		martial.replaceChild(head,martial.childNodes[0]);
+
+		var radioBoxes = ['Single','Married','Do not share'];
+		for(let i = 0;i < radioBoxes.length;i++){
+			var radioBox = document.createElement('input');
+			radioBox.setAttribute('type','radio');
+			radioBox.setAttribute('name','martial');
+			radioBox.setAttribute('id','martial[i]');
+			martial.appendChild(radioBox);
+			var label = document.createElement('label');
+			label.htmlFor = 'martials';
+			label.innerText = radioBoxes[i];
+			martial.appendChild(label);
+		}
+	</script>
+</body>
+</html>
